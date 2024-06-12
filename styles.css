@@ -1,0 +1,15 @@
+
+body {
+    height: 100vh;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#addBookForm {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+    justify-content: center;
+    border: 1px solid black;
+    height: 250px;
+    width: 250px;
+}

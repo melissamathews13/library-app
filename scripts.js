@@ -1,5 +1,6 @@
 const myLibrary = [];
 
+// constructor function
 function Book(title, author, pages, read) {
 	(this.title = title),
 		(this.author = author),
@@ -9,7 +10,11 @@ function Book(title, author, pages, read) {
 			return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}.`;
 		});
 }
-
+// function to add books to the library/ myLibrary array
 function addBookToLibrary() {
-	// do stuff here
+	let title = prompt('Enter the title of the book:');
+
+    let newBook = new Book(title, author, pages, read? 'Read' : "Not Read");
+    myLibrary.push(newBook)
 }
+
