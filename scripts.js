@@ -1,8 +1,11 @@
 // define button and form
+
 const popUpForm = document.getElementById("popUpForm");
 const addBookForm = document.getElementById("addBookForm");
 let button = document.getElementById("addNewBook");
 
+// initialize empty array
+const myLibrary = [];
 
 // form pop-up
 button.addEventListener("click", function () {
@@ -12,7 +15,6 @@ button.addEventListener("click", function () {
 //form submission
 addBookForm.addEventListener("submit", function (e) {
 	e.preventDefault(); // prevent the form submission from refreshing the page
-	addBookToLibrary();
 });
 
 // constructor function
@@ -25,8 +27,6 @@ function Book(title, author, pages, isbn, read) {
 }
 // function to add books to the library
 function addBookToLibrary() {
-	// initialize empty array
-	const myLibrary = [];
 
 	// get the input elements
 	const title = document.getElementById("title");
@@ -53,13 +53,15 @@ function addBookToLibrary() {
 		console.log(`Pages: ${pagesValue}`);
 		console.log(`ISBN: ${isbnValue}`);
 		console.log(`Read: ${readValue}`);
+
+		console.log(myLibrary);
 	
 
 	// clear the input fields
-	// title.value = "";
-	// author.value = "";
-	// pages.value = "";
-	// isbn.value = "";
-	// read.value = false;
+	title.value = "";
+	author.value = "";
+	pages.value = "";
+	isbn.value = "";
+	read.value = false;
 }
 
