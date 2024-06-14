@@ -3,25 +3,34 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Library App</title>
+		<title>MyLibrary App</title>
 		<link rel="stylesheet" href="styles.css" />
 		<script src="scripts.js" defer></script>
 	</head>
 	<body>
-		<form id="addBookForm">
-			<label for="title">Title:</label>
-			<input type="text" id="title" name="title" />
-
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author" maxlength="30">
-
-            <label for="pages">Pages:</label>
-            <input type="text" id="pages" name="pages" maxlength="30">
-
-            <label for="read-status">Read Status:</label>
-            <input type="checkbox" id="read-status" name="read-status">
-
-            <input type="submit" value="Add Book">
-		</form>
+		<div>
+			<h1>My Library</h1>
+		</div>
+		<div class="body-box">
+			<button id="addNewBook">
+				<h2>New Book</h2>
+			</button>
+		</div>
+		<br /><br />
+		<div class="form-popup" id="popUpForm">
+			<form id="addBookForm">
+				<label for="title">Title:</label>
+				<input type="text" id="title" name="title" />
+				<label for="author">Author:</label>
+				<input type="text" id="author" name="author" maxlength="30" />
+				<label for="pages">Pages:</label>
+				<input type="text" id="pages" name="pages" maxlength="30" />
+				<label for="isbn">ISBN#:</label>
+				<input type="text" id="isbn" />
+				<label for="read-status">Read Status:</label>
+				<input type="checkbox" id="read-status" name="read-status" />
+				<input type="submit" value="Submit" onlick="addBookToLibrary()" />
+			</form>
+		</div>
 	</body>
 </html>

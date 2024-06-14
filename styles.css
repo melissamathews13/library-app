@@ -1,15 +1,29 @@
-
 body {
-    height: 100vh;
-    -webkit-font-smoothing: subpixel-antialiased;
+	height: 100vh;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 #addBookForm {
 	display: flex;
 	flex-direction: column;
-	align-items: start;
-    justify-content: center;
-    border: 1px solid black;
-    height: 250px;
-    width: 250px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid black;
+	height: 250px;
+	width: 400px;
+}
+.form-popup {
+	display: none;
+	position: fixed;
+	top: 40%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: azure;
+}
+
+.btn-primary {
+	display: flex;
+	justify-self: center;
+	margin-top: 50px;
+	width: 500px;
 }
