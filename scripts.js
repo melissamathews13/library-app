@@ -1,20 +1,24 @@
-// define button and form
+// initialize empty array to store book objects
+const myLibrary = [];
 
 const popUpForm = document.getElementById("popUpForm");
 const addBookForm = document.getElementById("addBookForm");
-let button = document.getElementById("addNewBook");
+let newBookBtn = document.getElementById("newBook");
 
-// initialize empty array
-const myLibrary = [];
+// document.getElementById("read-status").checked = false;
 
 // form pop-up
-button.addEventListener("click", function () {
+newBookBtn.addEventListener("click", function () {
 	document.getElementById("popUpForm").style.display = "block";
 });
 
+// FIXME:
 //form submission
 addBookForm.addEventListener("submit", function (e) {
-	e.preventDefault(); // prevent the form submission from refreshing the page
+	e.preventDefault(); // prevent default form submission
+	addBookToLibrary(); // call function to add book to library
+	popUpForm.style.display = "none"; // close the pop-up form after submission
+	displayLibrary(); // display updated library
 });
 
 // constructor function
@@ -25,9 +29,10 @@ function Book(title, author, pages, isbn, read) {
 		(this.isbn = isbn),
 		(this.read = read);
 }
+
+// FIXME:
 // function to add books to the library
 function addBookToLibrary() {
-
 	// get the input elements
 	const title = document.getElementById("title");
 	const author = document.getElementById("author");
@@ -47,21 +52,53 @@ function addBookToLibrary() {
 		new Book(titleValue, authorValue, pagesValue, isbnValue, readValue)
 	);
 
-	    // Log the book's details to the console
-		console.log(`Title: ${titleValue}`);
-		console.log(`Author: ${authorValue}`);
-		console.log(`Pages: ${pagesValue}`);
-		console.log(`ISBN: ${isbnValue}`);
-		console.log(`Read: ${readValue}`);
+	// Log the book's details to the console
+	console.log(`Title: ${titleValue}`);
+	console.log(`Author: ${authorValue}`);
+	console.log(`Pages: ${pagesValue}`);
+	console.log(`ISBN: ${isbnValue}`);
+	console.log(`Read: ${readValue}`);
 
-		console.log(myLibrary);
-	
+	console.log(myLibrary);
 
 	// clear the input fields
 	title.value = "";
 	author.value = "";
 	pages.value = "";
 	isbn.value = "";
-	read.value = false;
+	read.checked = "";
 }
 
+addBookToLibrary();
+
+// let twilight = new Book("Twilight", "J.K.Rowling", 300, 123456789, true);
+// myLibrary.push(twilight);
+
+function displayLibrary() {
+	let table = document.getElementById("book-display");
+
+	// clear existing table rows
+	while (table.secondChild) {
+		table.removeChild(table.secondChild);
+	}
+
+	// check if the library is empty
+	if (myLibrary.length === 0) {
+		let tr = table.insertRow();
+		let cell = tr.insertCell();
+		cell.textContent = "Your library is empty!";
+	}
+
+	// iterate over each book in the library
+	myLibrary.forEach(function (book) {
+		let tr = table.insertRow();
+
+		// iterate over each property of the book
+		Object.values(book).forEach(function (value) {
+			let cell = tr.insertCell();
+			cell.textContent = value;
+		});
+	});
+}
+
+displayLibrary();
