@@ -5,18 +5,15 @@ const popUpForm = document.getElementById("popUpForm");
 const addBookForm = document.getElementById("addBookForm");
 let newBookBtn = document.getElementById("newBook");
 
-// document.getElementById("read-status").checked = false;
-
 // form pop-up
 newBookBtn.addEventListener("click", function () {
 	document.getElementById("popUpForm").style.display = "block";
 });
 
-// FIXME:
+// form submission
 //form submission
 addBookForm.addEventListener("submit", function (e) {
 	e.preventDefault(); // prevent default form submission
-	addBookToLibrary(); // call function to add book to library
 	popUpForm.style.display = "none"; // close the pop-up form after submission
 	displayLibrary(); // display updated library
 });
@@ -30,7 +27,6 @@ function Book(title, author, pages, isbn, read) {
 		(this.read = read);
 }
 
-// FIXME:
 // function to add books to the library
 function addBookToLibrary() {
 	// get the input elements
@@ -45,7 +41,7 @@ function addBookToLibrary() {
 	const authorValue = author.value;
 	const pagesValue = pages.value;
 	const isbnValue = isbn.value;
-	const readValue = read.checked;
+	const readValue = read.checked ? "Yes" : "No";
 
 	// add the values to the array
 	myLibrary.push(
@@ -57,7 +53,7 @@ function addBookToLibrary() {
 	console.log(`Author: ${authorValue}`);
 	console.log(`Pages: ${pagesValue}`);
 	console.log(`ISBN: ${isbnValue}`);
-	console.log(`Read: ${readValue}`);
+	console.log(`Read: ${read.checked}`);
 
 	console.log(myLibrary);
 
@@ -66,13 +62,8 @@ function addBookToLibrary() {
 	author.value = "";
 	pages.value = "";
 	isbn.value = "";
-	read.checked = "";
+	read.checked =  false;
 }
-
-addBookToLibrary();
-
-// let twilight = new Book("Twilight", "J.K.Rowling", 300, 123456789, true);
-// myLibrary.push(twilight);
 
 function displayLibrary() {
 	let table = document.getElementById("book-display");
@@ -101,4 +92,3 @@ function displayLibrary() {
 	});
 }
 
-displayLibrary();
