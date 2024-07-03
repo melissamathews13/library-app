@@ -8,29 +8,47 @@
 		<script src="scripts.js" defer></script>
 	</head>
 	<body>
+		
 		<div>
 			<h1>My Library</h1>
 		</div>
 		<div class="body-box">
-			<button id="newBook">
+			<button id="new-book">
 				<h2>New Book</h2>
 			</button>
 		</div>
-		<br /><br />
-		<div class="form-popup" id="popUpForm">
-			<form id="addBookForm">
+		<div class="form-container" id="form-container">
+			<form action="/" method="GET" id="add-book-form">
 				<label for="title">Title:</label>
-				<input type="text" id="title" name="title" />
+				<input
+					type="text"
+					id="title"
+					name="title"
+					placeholder="The Hunger Games" />
+
 				<label for="author">Author:</label>
-				<input type="text" id="author" name="author" maxlength="30" />
+				<input
+					type="text"
+					id="author"
+					name="author"
+					maxlength="40"
+					placeholder="Suzanne Collins" />
+
 				<label for="pages">Pages:</label>
-				<input type="text" id="pages" name="pages" maxlength="30" />
-				<label for="isbn">ISBN#:</label>
-				<input type="text" id="isbn" />
+				<input
+					type="text"
+					id="pages"
+					name="pages"
+					maxlength="40"
+					placeholder="386" />
+
+				<label for="isbn">ISBN:</label>
+				<input type="text" id="isbn" placeholder="978-0-439-02352-8" />
+
 				<label for="read-status">Read Status:</label>
-				<input 
-				type="checkbox" id="read-status" name="read-status" />
-				<input type="submit" value="Submit" onclick="addBookToLibrary()" />
+				<input type="checkbox" id="read-status" name="read-status" />
+
+				<input type="submit" id="submit" value="Submit" />
 			</form>
 		</div>
 		<table id="book-display">
