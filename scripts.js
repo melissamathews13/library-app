@@ -79,8 +79,8 @@ function displayLibrary() {
 		return;
 	}
 
-	// iterate over each book in the library
-	myLibrary.forEach( (book) => {
+	// Iterate over each book in the library
+	myLibrary.forEach( (book, index) => {
 		const tr = tableBody.insertRow();
 
 		// iterate over each property of the book
@@ -88,8 +88,24 @@ function displayLibrary() {
 			const cell = tr.insertCell();
 			cell.textContent = value;
 		});
+
+		// Add delete button
+		const deleteCell = tr.insertCell();
+		const deleteButton = document.createElement("button");
+		deleteButton.textContent = "Delete";
+		deleteButton.addEventListener("click", () => {deleteBook(index);
 	});
+	deleteCell.appendChild(deleteButton);
+});
 }
+
+// Delete book from the library
+function deleteBook(index) {
+	myLibrary.splice(index, 1);
+	displayLibrary(); // Display updated library
+}
+
+
 // form submission
 addBookForm.addEventListener("submit", (e) => {
 	e.preventDefault(); // Prevent default form submission
