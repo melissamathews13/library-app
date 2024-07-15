@@ -1,25 +1,18 @@
-// initialize empty array to store book objects
-const myLibrary = [];
-
+// DOM Elements
 const formContainer = document.getElementById("form-container");
 const addBookForm = document.getElementById("add-book-form");
-const newBookBtn = document.getElementById("new-book");
+const newBookButton = document.getElementById("new-book-button");
 const table = document.getElementById("book-display");
 
-// form pop-up
-newBookBtn.addEventListener("click", function () {
-	document.getElementById("popUpForm").style.display = "block";
+// Initialize empty array to store book objects
+const myLibrary = [];
+
+// Form pop-up
+newBookButton.addEventListener("click", () => {
+	formContainer.style.display = "block";
 });
 
-//form submission
-addBookForm.addEventListener("submit", function (e) {
-	e.preventDefault(); // prevent default form submission
-	popUpForm.style.display = "none"; // close the pop-up form after submission
-	addBookToLibrary();
-	displayLibrary(); // display updated library
-});
-
-// constructor function
+// Constructor function
 function Book(title, author, pages, isbn, read) {
 	(this.title = title),
 		(this.author = author),
@@ -28,23 +21,29 @@ function Book(title, author, pages, isbn, read) {
 		(this.read = read);
 }
 
-// function to add books to the library
+// Add book to the library
 function addBookToLibrary() {
-	// get the input elements
+	// Get the input elements
 	const title = document.getElementById("title");
 	const author = document.getElementById("author");
 	const pages = document.getElementById("pages");
 	const isbn = document.getElementById("isbn");
 	const read = document.getElementById("read-status");
 
-	// get the values of the input elements
-	const titleValue = title.value;
-	const authorValue = author.value;
-	const pagesValue = pages.value;
-	const isbnValue = isbn.value;
+	// Get the values of the input elements
+	const titleValue = title.value.trim();
+	const authorValue = author.value.trim();
+	const pagesValue = pages.value.trim();
+	const isbnValue = isbn.value.trim();
 	const readValue = read.checked ? "Yes" : "No";
 
-	// add the values to the array
+	// Validate inputs
+	if (!titleValue || !authorValue || !pagesValue || !isbnValue) {
+		alert("Please fill in all fields");
+		return;
+	}
+
+	// Add the values to the array
 	myLibrary.push(
 		new Book(titleValue, authorValue, pagesValue, isbnValue, readValue)
 	);
@@ -66,12 +65,18 @@ function addBookToLibrary() {
 	read.checked = false;
 }
 
+// Display library
 function displayLibrary() {
-	// check if the library is empty
+	// Clear the table before displaying
+	table.innerHTML = "";
+
+	// Check if the library is empty
+
 	if (myLibrary.length === 0) {
 		let tr = table.insertRow();
 		let cell = tr.insertCell();
 		cell.textContent = "Your library is empty!";
+		return;
 	}
 
 	// iterate over each book in the library
@@ -79,9 +84,16 @@ function displayLibrary() {
 		let tr = table.insertRow();
 
 		// iterate over each property of the book
-		Object.values(book).forEach(function (value) {
-			let cell = tr.insertCell();
+		Object.values(book).forEach(value => {
+			const cell = tr.insertCell();
 			cell.textContent = value;
 		});
 	});
 }
+// form submission
+addBookForm.addEventListener("submit", e => {
+	e.preventDefault(); // Prevent default form submission
+	formContainer.style.display = "none"; // Close the pop-up form after submission
+	addBookToLibrary();
+	displayLibrary(); // Display updated library
+});
