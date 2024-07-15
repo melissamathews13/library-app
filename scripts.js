@@ -21,6 +21,11 @@ function Book(title, author, pages, isbn, read) {
 		(this.read = read);
 }
 
+// Add toggleReadStatus method to Book prototype
+Book.prototype.toggleReadStatus = function (){
+	this.read = this.read === "Read" ? "Not Read" : "Read";
+};
+
 // Add book to the library
 function addBookToLibrary() {
 	// Get the input elements
@@ -35,7 +40,7 @@ function addBookToLibrary() {
 	const authorValue = author.value.trim();
 	const pagesValue = pages.value.trim();
 	const isbnValue = isbn.value.trim();
-	const readValue = read.checked ? "Yes" : "No";
+	const readValue = read.checked ? "Read" : "Not Read";
 
 	// Validate inputs
 	if (!titleValue || !authorValue || !pagesValue || !isbnValue) {
@@ -71,7 +76,6 @@ function displayLibrary() {
 	tableBody.innerHTML = "";
 
 	// Check if the library is empty
-
 	if (myLibrary.length === 0) {
 		const tr = tableBody.insertRow();
 		const cell = tr.insertCell();
@@ -83,11 +87,20 @@ function displayLibrary() {
 	myLibrary.forEach( (book, index) => {
 		const tr = tableBody.insertRow();
 
-		// iterate over each property of the book
+		// Iterate over each property of the book
 		Object.values(book).forEach((value) => {
 			const cell = tr.insertCell();
 			cell.textContent = value;
 		});
+
+		// Add toggle read status button
+		const readStatusCell = tr.insertCell();
+		const toggleReadButton = document.createElement("button");
+		toggleReadButton.textContent = "Update Progress";
+		toggleReadButton.addEventListener("click", () => {
+			toggleReadStatus(index);
+		});
+		readStatusCell.appendChild(toggleReadButton);
 
 		// Add delete button
 		const deleteCell = tr.insertCell();
@@ -97,6 +110,12 @@ function displayLibrary() {
 	});
 	deleteCell.appendChild(deleteButton);
 });
+}
+
+//Toggle Read Status of a book
+function toggleReadStatus(index) {
+	myLibrary[index].toggleReadStatus();
+	displayLibrary(); // Display updated library
 }
 
 // Delete book from the library
