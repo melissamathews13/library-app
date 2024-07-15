@@ -2,7 +2,7 @@
 const formContainer = document.getElementById("form-container");
 const addBookForm = document.getElementById("add-book-form");
 const newBookButton = document.getElementById("new-book-button");
-const table = document.getElementById("book-display");
+const tableBody = document.querySelector("#book-display tbody");
 
 // Initialize empty array to store book objects
 const myLibrary = [];
@@ -39,7 +39,7 @@ function addBookToLibrary() {
 
 	// Validate inputs
 	if (!titleValue || !authorValue || !pagesValue || !isbnValue) {
-		alert("Please fill in all fields");
+		alert("Please fill in all fields.");
 		return;
 	}
 
@@ -68,30 +68,30 @@ function addBookToLibrary() {
 // Display library
 function displayLibrary() {
 	// Clear the table before displaying
-	table.innerHTML = "";
+	tableBody.innerHTML = "";
 
 	// Check if the library is empty
 
 	if (myLibrary.length === 0) {
-		let tr = table.insertRow();
-		let cell = tr.insertCell();
+		const tr = tableBody.insertRow();
+		const cell = tr.insertCell();
 		cell.textContent = "Your library is empty!";
 		return;
 	}
 
 	// iterate over each book in the library
-	myLibrary.forEach(function (book) {
-		let tr = table.insertRow();
+	myLibrary.forEach( (book) => {
+		const tr = tableBody.insertRow();
 
 		// iterate over each property of the book
-		Object.values(book).forEach(value => {
+		Object.values(book).forEach((value) => {
 			const cell = tr.insertCell();
 			cell.textContent = value;
 		});
 	});
 }
 // form submission
-addBookForm.addEventListener("submit", e => {
+addBookForm.addEventListener("submit", (e) => {
 	e.preventDefault(); // Prevent default form submission
 	formContainer.style.display = "none"; // Close the pop-up form after submission
 	addBookToLibrary();
