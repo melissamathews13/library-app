@@ -3,6 +3,7 @@ const formContainer = document.getElementById("form-container");
 const addBookForm = document.getElementById("add-book-form");
 const newBookButton = document.getElementById("new-book-button");
 const tableBody = document.querySelector("#book-display tbody");
+const close = document.getElementById("close");
 
 // Initialize empty array to store book objects
 const myLibrary = [];
@@ -11,6 +12,8 @@ const myLibrary = [];
 newBookButton.addEventListener("click", () => {
 	formContainer.style.display = "block";
 });
+// Close pop-up
+close.addEventListener("click", () => formContainer.style.display = "none");
 
 // Constructor function
 function Book(title, author, pages, isbn, read) {

@@ -95,7 +95,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
 	height: 400px;
 	width: 400px;
 }
@@ -111,6 +111,21 @@ body {
 		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 	color: #273424;
 	border-radius: 10px;
+}
+
+.close-btn {
+	background: transparent;
+	border: none;
+	font-size: 25px;
+	position: absolute;
+	top: 5px;
+	right: 12px;
+	cursor: pointer;
+}
+
+.submit-btn {
+	font-weight: bold;
+	cursor: pointer;
 }
 
 button {
