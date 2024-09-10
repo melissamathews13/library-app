@@ -15,60 +15,79 @@
 	</head>
 	<body>
 		<header class="header">
-			<div class="header-top-row">My Library</div></header>
+			<div class="header-top-row">
+				<img class="header-icon" id="magnify-icon" src="images/magnify.svg" alt="magnify-icon">
+				<input
+					type="text"
+					name="input"
+					class="input"
+					id="search-input"
+					placeholder="Search..." />
+			</div>
+			
+		</header>
 		<sidebar class="sidebar">
-			<div>sidebar</div>
+			<div class="side-nav">
+				<img class="child" id="library-symbol" src="images/library.svg"
+				alt="library-symbol">
+				<span class="child library">My Library</span>
+			</div>
+			
 		</sidebar>
-<main class="main">
-		<div id="form-container" style="display: none">
-			<form id="add-book-form">
-				<label for="title">Title:</label>
-				<input type="text" id="title" placeholder="The Hunger Games" required />
+		<main class="main">
+			<div id="form-container" style="display: none">
+				<form id="add-book-form">
+					<label for="title">Title:</label>
+					<input
+						type="text"
+						id="title"
+						placeholder="The Hunger Games"
+						required />
 
-				<label for="author">Author:</label>
-				<input
-					type="text"
-					id="author"
-					maxlength="40"
-					placeholder="Suzanne Collins"
-					required />
+					<label for="author">Author:</label>
+					<input
+						type="text"
+						id="author"
+						maxlength="40"
+						placeholder="Suzanne Collins"
+						required />
 
-				<label for="pages">Number of Pages:</label>
-				<input
-					type="text"
-					id="pages"
-					maxlength="40"
-					placeholder="386"
-					required />
+					<label for="pages">Number of Pages:</label>
+					<input
+						type="text"
+						id="pages"
+						maxlength="40"
+						placeholder="386"
+						required />
 
-				<label for="isbn">ISBN:</label>
-				<input type="text" id="isbn" placeholder="978-0-439-02352-8" />
+					<label for="isbn">ISBN:</label>
+					<input type="text" id="isbn" placeholder="978-0-439-02352-8" />
 
-				<label for="read-status">Have you read this book?</label>
-				<input type="checkbox" id="read-status" />
-				<button type="submit">Add Book</button>
-			</form>
-		</div>
-		<div class="body-box main">
-			<table id="book-display">
-				<thead>
-					<tr>
-						<th>Title</th>
-						<th>Author</th>
-						<th>Pages</th>
-						<th>ISBN</th>
-						<th>Progress</th>
-						<th>Actions</th>
-						<!-- <th>Change Status</th>
+					<label for="read-status">Have you read this book?</label>
+					<input type="checkbox" id="read-status" />
+					<button type="submit">Add Book</button>
+				</form>
+			</div>
+			<div class="body-box main">
+				<table id="book-display">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Author</th>
+							<th>Pages</th>
+							<th>ISBN</th>
+							<th>Progress</th>
+							<th>Actions</th>
+							<!-- <th>Change Status</th>
 						<th>Remove Book</th> -->
-					</tr>
-				</thead>
-				<tbody>
-					<!-- Books will be displayed here -->
-				</tbody>
-			</table>
-			<button id="new-book-button">New Book</button>
-		</div>
-	</main>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Books will be displayed here -->
+					</tbody>
+				</table>
+				<button id="new-book-button">New Book</button>
+			</div>
+		</main>
 	</body>
 </html>

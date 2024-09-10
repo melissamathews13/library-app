@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,20 +7,16 @@
 body {
 	height: 100vh;
 	-webkit-font-smoothing: subpixel-antialiased;
-	font-family: "Noto Serif", serif;
-	font-optical-sizing: auto;
-	/* font-weight: <weight>; */
-	font-style: normal;
-	font-variation-settings:
-	  "width" 100;
-	  background-color:  #f9f9f9;
-	  color: #040201;
+	font-family: "Roboto", sans-serif;
+	-webkit-font-smoothing: subpixel-antialiased;
+	background-color: #f9f9f9;
+	color: #040201;
 	display: grid;
 	grid-template-columns: 290px 1fr;
 	grid-template-rows: 170px 1fr;
-	grid-template-areas: 
-	" sidebar header"
-	"sidebar main";
+	grid-template-areas:
+		"sidebar header"
+		"sidebar main";
 }
 
 .header {
@@ -26,27 +24,72 @@ body {
 	display: grid;
 	grid-area: header;
 	grid-template-columns: 1fr;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+		rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+
+.header-icon {
+	width: 1.5em;
+}
+
+#search-input {
+	margin-left: 10px;
+	margin-top: 20px;
+	padding: 5px;
+	border: none;
+	border-radius: 30px;
+	height: 30px;
+	width: 500px;
+	background-color: #f9f9f9;;
+}
+#magnify-icon {
+	margin-top: auto;
+	justify-self: end;
 }
 
 .sidebar {
 	background-color: #e7d6eb;
-	grid-area:sidebar;
+	grid-area: sidebar;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 100px 1fr 1.5fr;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.side-nav {
+	text-align: start;
+	font-size: 20px;
+}
+.side-nav img {
+	width: 2.5em;
+	margin-top: 0.5em;
+	margin-left: 1em;
+	margin-right: 0.5em;
 }
 
+.library {
+	font-size: 26px;
+}
+.child {
+	display: inline-block;
+	vertical-align: middle;
+}
 .main {
-	grid-area: main; 
+	grid-area: main;
 	display: flex;
 	flex-direction: column;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+		rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
 #new-book-button {
-	font-family: "Noto Serif", serif;
-    color: #273424;
-    border: none;
-	
+	font-family: Roboto;
+	color: #273424;
+	border: none;
 }
 #add-book-form {
 	display: flex;
@@ -55,29 +98,32 @@ body {
 	justify-content: center;
 	height: 400px;
 	width: 400px;
-	
 }
 #form-container {
 	display: none;
 	position: fixed;
 	top: 40%;
 	left: 50%;
-    transform: translate(-50%, -50%);
-    background-color:  #513032;;
-	color: #d8c6b7;
-	
+	transform: translate(-50%, -50%);
+	background-image: url(images/gray-texture-2.jpg);
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+		rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+	color: #273424;
+	border-radius: 10px;
 }
 
 button {
-	font-family: "Noto Serif", serif;
-	color:#273424;
+	/* font-family: "Noto Serif", serif; */
+	color: #273424;
 	border: none;
 	border-radius: 5px;
 	padding: 5px;
 }
 table,
 th,
-td { 
+td {
 	border: 1px solid #c8aed1;
 	border-collapse: collapse;
-	padding: 10px;}
+	padding: 10px;
+}
