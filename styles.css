@@ -1,11 +1,53 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 body {
 	height: 100vh;
 	-webkit-font-smoothing: subpixel-antialiased;
-	font-size: 32px;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+	font-family: "Noto Serif", serif;
+	font-optical-sizing: auto;
+	/* font-weight: <weight>; */
+	font-style: normal;
+	font-variation-settings:
+	  "width" 100;
+	  background-color:  #f9f9f9;
+	  color: #040201;
+	display: grid;
+	grid-template-columns: 290px 1fr;
+	grid-template-rows: 170px 1fr;
+	grid-template-areas: 
+	" sidebar header"
+	"sidebar main";
 }
 
+.header {
+	background-color: #e7d6eb;
+	display: grid;
+	grid-area: header;
+	grid-template-columns: 1fr;
+}
 
+.sidebar {
+	background-color: #e7d6eb;
+	grid-area:sidebar;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 100px 1fr 1.5fr;
+}
+
+.main {
+	grid-area: main; 
+	display: flex;
+	flex-direction: column;
+}
+
+#new-book-button {
+	font-family: "Noto Serif", serif;
+    color: #273424;
+    border: none;
+	
+}
 #add-book-form {
 	display: flex;
 	flex-direction: column;
@@ -21,20 +63,21 @@ body {
 	top: 40%;
 	left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(254, 183, 51);
+    background-color:  #513032;;
+	color: #d8c6b7;
 	
 }
 
-.btn-primary {
-	display: flex;
-	justify-self: center;
-	margin-top: 50px;
-	width: 500px;
+button {
+	font-family: "Noto Serif", serif;
+	color:#273424;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
 }
-
 table,
 th,
 td { 
-	border: 1px solid red;
+	border: 1px solid #c8aed1;
 	border-collapse: collapse;
 	padding: 10px;}

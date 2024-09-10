@@ -6,9 +6,20 @@
 		<title>MyLibrary App</title>
 		<link rel="stylesheet" href="styles.css" />
 		<script src="scripts.js" defer></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet" />
 	</head>
 	<body>
-		<h1>My Library</h1>
+		<header class="header">
+			<div class="header-top-row">My Library</div></header>
+		<sidebar class="sidebar">
+			<div>sidebar</div>
+		</sidebar>
+<main class="main">
 		<div id="form-container" style="display: none">
 			<form id="add-book-form">
 				<label for="title">Title:</label>
@@ -22,7 +33,7 @@
 					placeholder="Suzanne Collins"
 					required />
 
-				<label for="pages">Pages:</label>
+				<label for="pages">Number of Pages:</label>
 				<input
 					type="text"
 					id="pages"
@@ -33,16 +44,12 @@
 				<label for="isbn">ISBN:</label>
 				<input type="text" id="isbn" placeholder="978-0-439-02352-8" />
 
-				<label for="read-status">Completed:</label>
+				<label for="read-status">Have you read this book?</label>
 				<input type="checkbox" id="read-status" />
 				<button type="submit">Add Book</button>
 			</form>
 		</div>
-		<div class="body-box">
-			<button id="new-book-button">
-				<h2>New Book</h2>
-			</button>
-
+		<div class="body-box main">
 			<table id="book-display">
 				<thead>
 					<tr>
@@ -51,6 +58,7 @@
 						<th>Pages</th>
 						<th>ISBN</th>
 						<th>Progress</th>
+						<th>Actions</th>
 						<!-- <th>Change Status</th>
 						<th>Remove Book</th> -->
 					</tr>
@@ -59,6 +67,8 @@
 					<!-- Books will be displayed here -->
 				</tbody>
 			</table>
+			<button id="new-book-button">New Book</button>
 		</div>
+	</main>
 	</body>
 </html>
