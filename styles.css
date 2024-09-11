@@ -29,9 +29,9 @@ body {
 		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
-
 .header-icon {
-	width: 1.5em;
+	width: 2em;
+	position: relative;
 }
 
 #search-input {
@@ -41,16 +41,11 @@ body {
 	border: none;
 	border-radius: 30px;
 	height: 30px;
-	width: 500px;
-	background-color: #f9f9f9;;
+	width: 200px;
+	background-color: #f9f9f9;
 }
-#magnify-icon {
-	margin-top: auto;
-	justify-self: end;
-}
-
 .sidebar {
-	background-color: #e7d6eb;
+	background-color: #c8aed1;
 	grid-area: sidebar;
 	display: grid;
 	grid-template-columns: 1fr;
@@ -59,11 +54,11 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-.side-nav {
+.top-nav {
 	text-align: start;
-	font-size: 20px;
+	font-size: 25px;
 }
-.side-nav img {
+.top-nav img {
 	width: 2.5em;
 	margin-top: 0.5em;
 	margin-left: 1em;
@@ -71,7 +66,8 @@ body {
 }
 
 .library {
-	font-size: 26px;
+	font-size: 35px;
+	margin-top: 10px;
 }
 .child {
 	display: inline-block;
@@ -88,20 +84,47 @@ body {
 
 #new-book-button {
 	font-family: Roboto;
-	color: #273424;
+	font-weight: bold;
+	background-color: #c8aed1;
+	color: #f9f9f9;
 	border: none;
+	line-height: 50px;
+	height: 60px;
+	width: 250px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 24px;
+	box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); 
+	transition: 0.2s all; 
+
+
 }
+
+#new-book-button:active {
+	transform: scale(0.98);
+	/* Scaling button to 0.98 to its original size */
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+	/* Lowering the shadow */
+}
+#add-button-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 75px;
+}
+
 #add-book-form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
-	height: 400px;
-	width: 400px;
+	height: 450px;
+	width: 450px;
+	margin: 20px 0;
 }
 #form-container {
 	display: none;
 	position: fixed;
+	/* overflow: hidden; */
 	top: 40%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -128,13 +151,6 @@ body {
 	cursor: pointer;
 }
 
-button {
-	/* font-family: "Noto Serif", serif; */
-	color: #273424;
-	border: none;
-	border-radius: 5px;
-	padding: 5px;
-}
 table,
 th,
 td {

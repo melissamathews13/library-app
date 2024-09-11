@@ -15,7 +15,17 @@
 	</head>
 	<body>
 		<header class="header">
-			<div class="header-top-row">
+			<div class="top-nav">
+				<img class="child" id="library-symbol" src="images/library.svg"
+				alt="library-symbol">
+				<span class="child library">My Library</span>
+			</div>
+			
+			</div>
+			
+		</header>
+		<sidebar class="sidebar">
+			<div class="sidebar-top-row">
 				<img class="header-icon" id="magnify-icon" src="images/magnify.svg" alt="magnify-icon">
 				<input
 					type="text"
@@ -23,50 +33,45 @@
 					class="input"
 					id="search-input"
 					placeholder="Search..." />
-			</div>
-			
-		</header>
-		<sidebar class="sidebar">
-			<div class="side-nav">
-				<img class="child" id="library-symbol" src="images/library.svg"
-				alt="library-symbol">
-				<span class="child library">My Library</span>
-			</div>
-			
+		</div>
+		<div id="add-button-container">
+			<button id="new-book-button">+ Add New Book</button>
+		</div>
+		
 		</sidebar>
 		<main class="main">
 			<div id="form-container" style="display: none">
 				<form id="add-book-form">
 					<button class="close-btn" id="close">x</button>
-					<label for="title">Title:</label>
+					<label for="title">Title</label>
 					<input
 						type="text"
 						id="title"
-						placeholder="The Hunger Games"
+						placeholder="Enter Title"
 						required />
 
-					<label for="author">Author:</label>
+					<label for="author">Author</label>
 					<input
 						type="text"
 						id="author"
 						maxlength="40"
-						placeholder="Suzanne Collins"
+						placeholder="Enter Author"
 						required />
 
-					<label for="pages">Number of Pages:</label>
+					<label for="pages">Number of Pages</label>
 					<input
 						type="text"
 						id="pages"
 						maxlength="40"
-						placeholder="386"
+						placeholder="Enter Number of Pages "
 						required />
 
-					<label for="isbn">ISBN:</label>
-					<input type="text" id="isbn" placeholder="978-0-439-02352-8" />
+					<label for="isbn">ISBN</label>
+					<input type="text" id="isbn" placeholder="Enter ISBN" />
 
 					<label for="read-status">Have you read this book?</label>
-					<input type="checkbox" id="read-status" />
-					<button class="submit-btn" type="submit">Add Book</button>
+					<input type="checkbox" id="read-status" /> 
+					<button class="submit-btn" type="submit">Submit</button>
 				</form>
 			</div>
 			<div class="body-box main">
@@ -87,8 +92,7 @@
 						<!-- Books will be displayed here -->
 					</tbody>
 				</table>
-				<button id="new-book-button">New Book</button>
-			</div>
+			
 		</main>
 	</body>
 </html>
