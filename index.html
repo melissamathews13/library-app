@@ -42,35 +42,45 @@
 		<main class="main">
 			<div id="form-container" style="display: none">
 				<form id="add-book-form">
+					<h2>Add New Book</h2>
 					<button class="close-btn" id="close">x</button>
-					<label for="title">Title</label>
-					<input
-						type="text"
-						id="title"
-						placeholder="Enter Title"
-						required />
+					<div class="form-group">
+						<label for="title">*Title</label>
+						<input
+							type="text"
+							id="title"
+							placeholder="Enter Title"
+							required />
+						</div>
+					
+					<div class="form-group">
 
-					<label for="author">Author</label>
+					<label for="author">*Author</label>
 					<input
 						type="text"
 						id="author"
 						maxlength="40"
 						placeholder="Enter Author"
 						required />
+					</div>
+					<div class="form-group">
 
-					<label for="pages">Number of Pages</label>
+					<label for="pages">*Number of Pages</label>
 					<input
 						type="text"
 						id="pages"
 						maxlength="40"
 						placeholder="Enter Number of Pages "
 						required />
-
-					<label for="isbn">ISBN</label>
-					<input type="text" id="isbn" placeholder="Enter ISBN" />
-
-					<label for="read-status">Have you read this book?</label>
-					<input type="checkbox" id="read-status" /> 
+					</div>
+					<div class="form-group">
+						<label for="isbn">*ISBN</label>
+						<input type="text" id="isbn" placeholder="Enter ISBN" />
+					</div>
+					<div class="form-group checkbox-label">
+						<label for="read-status">*I have read this book</label>
+						<input type="checkbox" id="read-status" /> 
+					</div>
 					<button class="submit-btn" type="submit">Submit</button>
 				</form>
 			</div>
