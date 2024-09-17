@@ -13,7 +13,7 @@ newBookButton.addEventListener("click", () => {
 	formContainer.style.display = "block";
 });
 // Close pop-up
-close.addEventListener("click", () => formContainer.style.display = "none");
+close.addEventListener("click", () => (formContainer.style.display = "none"));
 
 // Constructor function
 function Book(title, author, pages, isbn, read) {
@@ -25,7 +25,7 @@ function Book(title, author, pages, isbn, read) {
 }
 
 // Add toggleReadStatus method to Book prototype
-Book.prototype.toggleReadStatus = function (){
+Book.prototype.toggleReadStatus = function () {
 	this.read = this.read === "Read" ? "Not Read" : "Read";
 };
 
@@ -87,11 +87,11 @@ function displayLibrary() {
 	}
 
 	// Iterate over each book in the library
-	myLibrary.forEach( (book, index) => {
+	myLibrary.forEach((book, index) => {
 		const tr = tableBody.insertRow();
 
 		// Iterate over each property of the book
-		Object.values(book).forEach((value) => {
+		Object.values(book).forEach(value => {
 			const cell = tr.insertCell();
 			cell.textContent = value;
 		});
@@ -109,10 +109,11 @@ function displayLibrary() {
 		const deleteCell = tr.insertCell();
 		const deleteButton = document.createElement("button");
 		deleteButton.textContent = "Delete";
-		deleteButton.addEventListener("click", () => {deleteBook(index);
+		deleteButton.addEventListener("click", () => {
+			deleteBook(index);
+		});
+		deleteCell.appendChild(deleteButton);
 	});
-	deleteCell.appendChild(deleteButton);
-});
 }
 
 //Toggle Read Status of a book
@@ -127,11 +128,11 @@ function deleteBook(index) {
 	displayLibrary(); // Display updated library
 }
 
-
 // form submission
-addBookForm.addEventListener("submit", (e) => {
+addBookForm.addEventListener("submit", e => {
 	e.preventDefault(); // Prevent default form submission
 	formContainer.style.display = "none"; // Close the pop-up form after submission
 	addBookToLibrary();
 	displayLibrary(); // Display updated library
 });
+

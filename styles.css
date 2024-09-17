@@ -20,6 +20,7 @@ body {
 }
 
 .header {
+	font-family: "Playwrite CU", cursive;
 	background-color: #e7d6eb;
 	display: grid;
 	grid-area: header;
@@ -30,7 +31,8 @@ body {
 }
 
 .header-icon {
-	width: 2em;
+	margin: 20px;
+	width: 3em;
 	position: relative;
 }
 
@@ -85,8 +87,8 @@ body {
 #new-book-button {
 	font-family: Roboto;
 	font-weight: bold;
-	background-color: #c8aed1;
-	color: #f9f9f9;
+	background-color: #e7d6eb;
+	color: #040201;
 	border: none;
 	line-height: 50px;
 	height: 60px;
@@ -143,8 +145,8 @@ body {
 	display: none;
 	position: fixed;
 	/* overflow: hidden; */
-	top: 40%;
-	left: 50%;
+	top: 50%;
+	left:50%;
 	transform: translate(-50%, -50%);
 	background-image: url(images/gray-texture-2.jpg);
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
@@ -152,6 +154,7 @@ body {
 		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 	color: #273424;
 	border-radius: 10px;
+	padding: 20px;
 }
 
 .form-group {
@@ -174,6 +177,7 @@ body {
 	top: 5px;
 	right: 12px;
 	cursor: pointer;
+
 }
 
 .submit-btn {

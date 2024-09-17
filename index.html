@@ -12,11 +12,18 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet" />
+
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header class="header">
 			<div class="top-nav">
-				<img class="child" id="library-symbol" src="images/library.svg"
+				<img class="child" id="library-symbol" src="images/books.png"
 				alt="library-symbol">
 				<span class="child library">My Library</span>
 			</div>
@@ -26,23 +33,18 @@
 		</header>
 		<sidebar class="sidebar">
 			<div class="sidebar-top-row">
-				<img class="header-icon" id="magnify-icon" src="images/magnify.svg" alt="magnify-icon">
-				<input
-					type="text"
-					name="input"
-					class="input"
-					id="search-input"
-					placeholder="Search..." />
+				<img class="header-icon" id="profile-icon" src="images/profile-2.png" alt="profile-icon">
+				
 		</div>
 		<div id="add-button-container">
-			<button id="new-book-button">+ Add New Book</button>
+			<button id="new-book-button">+ Add to Library</button>
 		</div>
 		
 		</sidebar>
 		<main class="main">
 			<div id="form-container" style="display: none">
 				<form id="add-book-form">
-					<h2>Add New Book</h2>
+					<h2>New Book Entry</h2>
 					<button class="close-btn" id="close">x</button>
 					<div class="form-group">
 						<label for="title">*Title</label>
