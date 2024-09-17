@@ -1,8 +1,7 @@
 # Library Application
 
-![alt text](library-home.png)
-![alt text](library-form.png)
 ![alt text](library-log.png)
+![alt text](library-form.png)
 
 ## Overview
 
