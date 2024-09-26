@@ -19,6 +19,7 @@ This application is designed to serve as a digital library, allowing users to:
 ## Technologies
 
 - Frontend: HTML, CSS, JavaScript
+- Backend: NodeJS
 
 ## Usage
 
